@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-import "github.com/AndreyRomanchev/sb-go/task171/logger"
+import (
+	"fmt"
+	"github.com/AndreyRomanchev/sb-go/task171/logger"
+)
 
 type Product struct {
 	id       int
