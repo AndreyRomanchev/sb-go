@@ -1,0 +1,1 @@
+module "github.com/AndreyRomanchev/sb-go/task171"
