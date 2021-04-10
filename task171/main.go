@@ -5,6 +5,8 @@ import (
 	"github.com/AndreyRomanchev/sb-go/task171/logger"
 )
 
+var l = logger.New("2006-01-02T15:04:05.999Z", true)
+
 type Product struct {
 	id       int
 	name     string
@@ -42,11 +44,11 @@ func NewCategory(id int, name int, path string) Category {
 }
 
 func (p *Product) FullInfo() {
-	fmt.Println("Product ID:", p.id)
-	fmt.Println("Product Name:", p.name)
-	fmt.Println("Product Category ID:", p.category.id)
-	fmt.Println("Product Category Name:", p.category.name)
-	fmt.Println("Product Category Path:", p.category.path)
+	l.Log("Product ID:", p.id)
+	l.Log("Product Name:", p.name)
+	l.Log("Product Category ID:", p.category.id)
+	l.Log("Product Category Name:", p.category.name)
+	l.Log("Product Category Path:", p.category.path)
 }
 
 func (c *Category) GetName() int {

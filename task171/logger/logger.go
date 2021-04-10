@@ -18,18 +18,18 @@ func New(timeformat string, debug bool) *Logger {
 	}
 }
 
-func (l *Logger) Log(level string, s string) {
+func (l *Logger) Log(level string, s ...interface{}) {
 	level = strings.ToLower(level)
 	switch level {
 	case "info", "warning":
 		if l.debug {
-			l.write(level, s)
+			l.write(level, s...)
 		}
 	default:
-		l.write(level, s)
+		l.write(level, s...)
 	}
 }
 
-func (l *Logger) write(level string, s string) {
+func (l *Logger) write(level string, s ...interface{}) {
 	fmt.Printf("[%s] %s %s\n", level, time.Now().Format(l.timeFormat), s)
 }
